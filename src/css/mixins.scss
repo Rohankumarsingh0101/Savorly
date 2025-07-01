@@ -1,0 +1,27 @@
+@import './quasar.variables.scss';
+
+@mixin section-fade($from-color, $to-color) {
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: -100px;
+    left: 0;
+    right: 0;
+    height: 100px;
+    background: linear-gradient(to bottom, $from-color, transparent);
+    z-index: 0;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -100px;
+    left: 0;
+    right: 0;
+    height: 100px;
+    background: linear-gradient(to top, $to-color, transparent);
+    z-index: 0;
+  }
+}
